@@ -1,0 +1,16 @@
+{
+  "name": "SpaceX GraphQL Schema",
+  "schemaPath": "spacex.graphql",
+  "includes": ["src/**/*.vue", "src/**/*.js"],
+  "extensions": {
+    "endpoints": {
+      "SpaceX GraphQL Endpoint": {
+        "url": "https://api.spacex.land/graphql",
+        "headers": {
+          "user-agent": "JS GraphQL"
+        },
+        "introspect": true
+      }
+    }
+  }
+}
