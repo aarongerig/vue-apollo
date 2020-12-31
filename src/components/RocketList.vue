@@ -1,37 +1,23 @@
 <template>
   <ul>
     <li v-for="rocket in rockets" :key="rocket.id">
-      <h2>{{rocket.name}}</h2>
-      <p>{{rocket.description}}</p>
-      <p><strong>$ {{rocket.costPerLaunch}}</strong></p>
+      <router-link :to="{ name: 'Rocket', params: { id: rocket.id } }">
+        <h2>🚀 {{rocket.name}}</h2>
+      </router-link>
     </li>
   </ul>
 </template>
 
 <script>
-import gql from 'graphql-tag'
-
-const query = gql`
-query getRockets {
-  rockets {
-    id
-    name
-    description
-    costPerLaunch: cost_per_launch
-  }
-}`
+import { GET_ROCKETS } from '@/queries'
 
 export default {
   name: 'RocketList',
 
   apollo: {
     rockets: {
-      query
+      query: GET_ROCKETS
     }
   }
 };
 </script>
-
-<style scoped>
-
-</style>

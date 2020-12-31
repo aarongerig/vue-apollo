@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import RocketList from '@/components/RocketList.vue'
+import RocketList from '@/components/RocketList'
 
 export default {
   components: {
